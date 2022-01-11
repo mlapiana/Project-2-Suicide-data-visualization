@@ -31,7 +31,7 @@ function plotBubble(labels, values){
       yaxis: {
           title: 'Suicides'
       },
-      title: 'Suicides by Age'
+      title: '2002-2015 World Suicides by Age'
   }
   var config = {responsive: true}
   Plotly.newPlot("bubble_age", data, layout, config);
@@ -45,13 +45,13 @@ d3.json('/api/suicides_by_age').then(function(data){
   plotBubble(bubbleLabels,bubbleValues)
 });
 // Adding country names to the select options
-d3.json('/api/yearly_suicides_by_age_country').then(function(data){
+d3.json('/api/yearly_suicides_by_age_country_plot').then(function(data){
   Object.entries(data).forEach(function([key,value]){
     var option = "<option value='" + key + "'>" + key + "</option>";
     $("#selectCountry").append(option);
   })
 })
-for (var i = 1997; i < 2017; ++i) {
+for (var i = 2002; i < 2016; ++i) {
       var option = "<option value='" + i + "'>" + i + "</option>";
       $("#selectYear").append(option);
   }
@@ -63,7 +63,7 @@ $(document).ready(function(){
     console.log("country",country)
     const year = $('#selectYear option:selected').val()
     console.log("year",year)
-    d3.json('/api/yearly_suicides_by_age_country').then(function(data){
+    d3.json('/api/yearly_suicides_by_age_country_plot').then(function(data){
         var selectedCountryOutput = Object.entries(data).filter(([key,value])=> key==country)[0][1]
         var filteredOutput = selectedCountryOutput.filter(data=>data.year == year)
         console.log('filteredOutput',filteredOutput)

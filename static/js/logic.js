@@ -11,7 +11,7 @@ var year = document.querySelector('#sel_year');
 // note2: each layer is a shape on the map (single feature that includes properties and geometry info)
 function selectDataSource(feature){
   var yearSelected = document.querySelector('#sel_year').value;
-  console.log("year clicked", yearSelected);
+
   geojson.eachLayer(function(layer){
     var suicideRate = eval(`layer.feature.properties.` + yearSelected)
     layer.setStyle({
@@ -58,7 +58,8 @@ function getColor(d) {
 // Creating map object
 var myMap = L.map("map", {
   center: [0, 0],
-  zoom: 2
+  zoom: 2,
+  scrollWheelZoom: false
 });
 
 // Adding tile layer
@@ -92,10 +93,10 @@ d3.json(geoData).then(function(data) {
     onEachFeature: function(feature, layer) {
       // accesses the layer and adds popup
       if (feature.properties.s2002 === 0) { 
-        layer.bindPopup("Country: " + feature.properties.ADMIN + "<br>Suicides:<br>" + "No data");
+        layer.bindPopup("Country: " + feature.properties.ADMIN + "<br>Suicides per 100k pop:<br>" + "No data");
       }
       else {
-        layer.bindPopup("Country: " + feature.properties.ADMIN + "<br>Suicides:<br>" + feature.properties.s2002);
+        layer.bindPopup("Country: " + feature.properties.ADMIN + "<br>Suicides per 100k pop:<br>" + feature.properties.s2002);
       }
 
       // accesses the layer and runs function countryClicked() on each click
@@ -106,17 +107,19 @@ d3.json(geoData).then(function(data) {
 // on country click, the name of the country is returned
 function countryClicked(e){
   // grabs country name of clicked object
-  var countrySelected = e.target.feature.properties.ADMIN;
+  var countrySelected = e.target.feature.properties.ISO_A3;
   console.log("country clicked", countrySelected);
+  var yearClicked = parseInt(document.querySelector('#sel_year').value.slice(1,5));
+  console.log("year clicked", yearClicked);
 
   // function that takes the country as an input and updates other plots
-  otherPlots(countrySelected);
+  otherPlots(countrySelected,yearClicked);
 }
 
 // code for updating plots goes here
-function otherPlots(countrySelected){
-  // call functions that update plots
-}
+// function otherPlots(countrySelected){
+//   // call functions that update plots
+// }
 
 // create legend
 function addLegend(){
@@ -129,7 +132,7 @@ function addLegend(){
     var labels = [];
 
     // Add min & max
-    var legendInfo = "<h1>Suicides</h1>" +
+    var legendInfo = "<h5>Suicides per 100k pop</h5>" +
       "<div class=\"labels\">" +
         "<div class=\"min\">" + limits[0] + "</div>" +
         "<div class=\"max\">" + limits[limits.length - 1] + "</div>" +

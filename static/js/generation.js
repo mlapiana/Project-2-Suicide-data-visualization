@@ -11,7 +11,7 @@ $.ajax({
             values: values
         }   
         var layout = {
-            title:'Suicide Rates by Generation',
+            title:'2002-2015 World Suicide Rates by Generation',
             width: 600,
             height: 600
         }
@@ -39,7 +39,7 @@ function loadPie() {
                 values: values
             }
             var layout = {
-                title: 'Suicide Rates by Generation'
+                title: '2002-2015 World Suicide Rates by Generation'
             }
             Plotly.newPlot('pie_generation', [trace], layout);
 
@@ -48,7 +48,7 @@ function loadPie() {
 }
 
 $(document).ready(function () {
-    for (var i = 1997; i < 2017; ++i) {
+    for (var i = 2002; i < 2016; ++i) {
         var option = "<option value='" + i + "'>" + i + "</option>";
         $("#selectYear").append(option);
     }
