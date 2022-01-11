@@ -14,7 +14,7 @@ function plotPie(labels, values){
     Plotly.newPlot('pie_gender', [trace], layout, config);
 }
 
-for (var i = 1985; i < 2017; ++i) {
+for (var i = 2002; i < 2016; ++i) {
     var option = "<option value='" + i + "'>" + i + "</option>";
     $("#selectYear").append(option);
 }
