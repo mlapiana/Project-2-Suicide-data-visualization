@@ -1,18 +1,18 @@
-#Project2--Suicide-data-Visualization
+# Project2--Suicide-data-Visualization
 
 Meet the Team 5: Michael Lapiana, Margot Rudy, Shreyansh Saraiya, and Jenny Yang
 
-#Objective
+# Objective
 
 Suicide Data Visualization Death by suicide is sensitive topic that causes pain to hundreds of thousands of people every year around the world. There is a need for it to be investigated in order to learn from it and possibly prevent it. According to estimates from the World Health Organization (WHO), Suicide is the second leading cause of death among 15-29 years old and over 800,000 people die because of it every year. These large numbers motivated us to work on this topic. We found that the data is workable and not too complex to pick apart.
 
-#Links
+# Links
 
 Dataset: https://www.kaggle.com/russellyates88/suicide-rates-overview-1985-to-2016?select=master.csv datasize: 2.71MB https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson
 
 Link of Repo: https://github.com/mlapiana/Project-2-Suicide-data-visualization
 
-#Project Content
+# Project Content
 Our project contains a website with several views of our data.. 
 1.  Suicide Chloropleth Map to control the dashboard by year and country with handle clicks which changes all views. The views include a bubble chart for Suicides by Age, and pie charts for Gender and Generation for selected Country/Year. 
 
@@ -24,7 +24,7 @@ Our project contains a website with several views of our data..
 
 FILES INCLUDED IN THE REPO: 2 JUPYTER NOTEBOOKS - ETL (FOR DATA TRANSFORMATION AND GENERATING DATABASE), GEOJSON MODIFICATION- GENERATE GEOJSON THAT FEEDS INFO TO THE MAP, Query.sql to assign primary key to table, APP.PY - RETURN FLASK SERVER TO RETURN THE VIEWS, TEMPLATE FOLDER- 5 HTMLS- to make each page, JSon Files- 8 to generate content in the web for each webpage, and CSS- file for styling
 
-#Instruction to recreate the project:
+# Instruction to recreate the project:
 
 1. Open PgAdmin as a management tool for PostgreSQL. Create `congfig.py` to include username and password. Create a new database entitled `suicide_db`.
 
@@ -34,11 +34,11 @@ FILES INCLUDED IN THE REPO: 2 JUPYTER NOTEBOOKS - ETL (FOR DATA TRANSFORMATION A
 
 4. Run `modify_geojson.ipynb` 
 
-4a) Reduce the geojson file by using mapshaper.org. Name the reduced file `country_15years_reduced.json`
+    4a) Reduce the geojson file by using mapshaper.org. Name the reduced file `country_15years_reduced.json`
 
 5. Finally,Run Flask on the Jupyter notebook. '
 
-To run the site properly you must first enter the year in the drop down before you choose which country you would like the data on.
+# To run the site properly you must first enter the year in the drop down before you choose which country you would like the data on.
 
 Our project Utilized the following: ETL: *Clean in Jupyter notebook and load data in SQL, JQuery-used to popupate data to communicate w javascript library, Popper -visualization, Bootstrap -visualization, D3 -visualization, Plotly -visualization, Javascript-coding, Leaflet-design, Python - coding, Jupyter - query, json- database, Pandas - coding, SQLAlchemy -database, PgAdmin- database, html- style, css- style, ETL: *Clean in Jupyter notebook and load data in SQL Define database schema , app.py: Build a Flask Server for API endpoints
 
