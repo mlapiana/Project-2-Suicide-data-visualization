@@ -34,12 +34,13 @@ FILES INCLUDED IN THE REPO: 2 JUPYTER NOTEBOOKS - ETL (FOR DATA TRANSFORMATION A
 
 4. Run `modify_geojson.ipynb` 
 
-    4a) Reduce the geojson file by using mapshaper.org. Name the reduced file `country_15years_reduced.json`
+    4a) Reduce the geojson file by using mapshaper.org. Name the reduced file `country_15years_reduced.json` 
 
-5. Finally,Run Flask on the Jupyter notebook. '
+5. Activate Pythondata38. Run Python `app.py`. 
 
-# To run the site properly you must first enter the year in the drop down before you choose which country you would like the data on.
+6. Open browser and type the Flask (port name) server name to view the site.
 
-Our project Utilized the following: ETL: *Clean in Jupyter notebook and load data in SQL, JQuery-used to popupate data to communicate w javascript library, Popper -visualization, Bootstrap -visualization, D3 -visualization, Plotly -visualization, Javascript-coding, Leaflet-design, Python - coding, Jupyter - query, json- database, Pandas - coding, SQLAlchemy -database, PgAdmin- database, html- style, css- style, ETL: *Clean in Jupyter notebook and load data in SQL Define database schema , app.py: Build a Flask Server for API endpoints
+# To run the the dashboard properly, you must first enter the year, then click which country you would like the data from.
+
 
 
