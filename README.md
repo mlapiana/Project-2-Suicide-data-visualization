@@ -60,7 +60,9 @@ As you run the query you should see that the database is ready to be read by the
 to go to mapshaper.org to shrink your data files. We named our file as "_reduced" to keep track. This saved space for the project.
 It is also important to note to hide your API keys and your passwords.
 
-5. Finally,Run Flask on the Jupyter notebook. 
+5. Finally,Run Flask on the Jupyter notebook. '
+
+6. To run the site properly you must first enter the year in the drop down before you choose which country you would like the data on.
 
 
 Our project Utilized the following:
