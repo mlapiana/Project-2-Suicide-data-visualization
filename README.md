@@ -28,7 +28,6 @@ visualization of a bubble chart for Suicides by Age, and
 pie charts for  Gender and Generation for selected Country/Year. 
 It is a 5 page website, with 1 map and a dashboard, with pages
 2-5 detailed by Age, Gender, Generation and Country.
-We utilized a Leaflet heat map with mouse click control for Year and Country and Plotly charts????
 Our project utilizes a Flask server with an API endpoints, and our Flask server can pull data 
 from our database before returning it to our website. 
 Our  project also uses  PostgreSQL.The  JavaScript library that we did not cover in 
