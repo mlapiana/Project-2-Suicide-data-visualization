@@ -2,9 +2,9 @@
 
 Meet the Team
 Team 5:
-Michael Lapiana
-Margot Rudy
-Shreyansh Saraiya
+Michael Lapiana,
+Margot Rudy,
+Shreyansh Saraiya, and
 Jenny Yang 
 
 
